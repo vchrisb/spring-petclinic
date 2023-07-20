@@ -18,10 +18,12 @@ spec:
       value: postgres 
   build:
     env:
+    - name: BP_GRADLE_BUILD_FILE
+      value: skip
     - name: BP_JVM_VERSION
       value: "17" 
   serviceClaims:
-    - name: db
+    - name: postgres-db
       ref:
         apiVersion: services.apps.tanzu.vmware.com/v1alpha1
         kind: ClassClaim
