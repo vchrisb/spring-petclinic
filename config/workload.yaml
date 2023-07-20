@@ -17,6 +17,8 @@ spec:
     env:
     - name: BP_JVM_VERSION
       value: "17"
+    - name: SPRING_PROFILES_ACTIVE
+      value: postgres  
   serviceClaims:
     - name: db
       ref:
