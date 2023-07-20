@@ -13,12 +13,13 @@ spec:
       url: https://github.com/vchrisb/spring-petclinic
       ref:
         branch: tap
+  env:
+    - name: SPRING_PROFILES_ACTIVE
+      value: postgres 
   build:
     env:
     - name: BP_JVM_VERSION
-      value: "17"
-    - name: SPRING_PROFILES_ACTIVE
-      value: postgres  
+      value: "17" 
   serviceClaims:
     - name: db
       ref:
