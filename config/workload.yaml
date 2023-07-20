@@ -6,6 +6,10 @@ metadata:
     apps.tanzu.vmware.com/workload-type: web
     app.kubernetes.io/part-of: spring-petclinic
 spec:
+  params:
+  - name: annotations
+    value:
+      autoscaling.knative.dev/minScale: "1"
   source:
     git:
       url: https://github.com/vchrisb/spring-petclinic
@@ -15,3 +19,9 @@ spec:
     env:
     - name: BP_JVM_VERSION
       value: "17"
+  serviceClaims:
+    - name: db
+      ref:
+        apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+        kind: ClassClaim
+        name: psql-claim-1
