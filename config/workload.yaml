@@ -16,8 +16,8 @@ spec:
   env:
     - name: SPRING_PROFILES_ACTIVE
       value: postgres
-    - name: JAVA_TOOLS_OPTION
-      value: -Dorg.springframework.cloud.bindings.boot.enable="true"
+#    - name: JAVA_TOOLS_OPTION
+#      value: -Dorg.springframework.cloud.bindings.boot.enable="true"
   build:
     env:
     - name: BP_GRADLE_BUILD_FILE
